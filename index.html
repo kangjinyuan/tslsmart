@@ -1,0 +1,561 @@
+﻿<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>综合管理平台</title>
+		<meta name="keywords" content="">
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width,initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<meta http-equiv="Pragma" content="no-cache">
+		<meta http-equiv="Cache-Control" content="no-cache">
+		<meta http-equiv="Expires" content="0">
+		<link rel="shortcut icon" href="img/common/logo.png" type="image/x-icon" />
+		<link rel="stylesheet" href="css/reset.css" />
+		<link rel="stylesheet" href="css/common.css?v=b4f7195f99" />
+		<script src="js/jquery-1.9.1.min.js"></script>
+		<script src="js/echarts-all-3.js"></script>
+		<script src="js/circleChart.es5.min.js"></script>
+		<script src="js/hammer.min.js"></script>
+		<script src="js/zoom-marker.min.js"></script>
+		<script src="js/jquery.mousewheel.min.js"></script>
+		<script src="layui/layui.all.js"></script>
+		<script src="js/hls.min.js"></script>
+		<script src="js/vue.min.js"></script>
+		<script src="js/postUrl.js?v=62b1256164"></script>
+		<script src="js/common.js?v=929df8b434"></script>
+	</head>
+
+	<body>
+		<div class="full-box VDOM" v-cloak>
+			<div class="column-list-box column-list-width-25">
+				<div class="row-list-box row-list-height-25">
+					<div class="row-list-inner-box">
+						<div class="row-list-title-box">今日报警</div>
+						<div class="row-list-content-box">
+							<div class="decorate-list position-left"></div>
+							<div class="decorate-list position-right"></div>
+							<div class="today-alert-box position-center">
+								<div class="today-alert-title-box">
+									<div class="today-alert-title-text position-left-bottom">报警总数:<span>300</span>起</div>
+								</div>
+								<ul class="today-alert-content-box">
+									<li>
+										<div class="today-alert-text today-alert-number"><span>18</span>起</div>
+										<div class="today-alert-text">漏水检测传感器</div>
+									</li>
+									<li>
+										<div class="today-alert-text today-alert-number"><span>8</span>起</div>
+										<div class="today-alert-text">人体感应器</div>
+									</li>
+									<li>
+										<div class="today-alert-text today-alert-number"><span>12</span>起</div>
+										<div class="today-alert-text">干节点检测器</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row-list-box row-list-height-35">
+					<div class="row-list-inner-box">
+						<div class="row-list-title-box">
+							<div class="row-list-title-text-box">
+								<div class="row-list-title-text">设备状态</div>
+								<div class="title-decorate"></div>
+							</div>
+						</div>
+						<div class="row-list-content-box">
+							<div class="decorate-list position-left"></div>
+							<div class="decorate-list position-right"></div>
+							<div class="equipment-state-box position-center"></div>
+							<div class="equipment-state-text-box">
+								<p>487</p>
+								<p>异常行为</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row-list-box row-list-height-40">
+					<div class="row-list-inner-box">
+						<div class="row-list-title-box">
+							<div class="row-list-title-text-box">
+								<div class="row-list-title-text">待办事项</div>
+								<div class="title-decorate"></div>
+							</div>
+						</div>
+						<div class="row-list-content-box">
+							<div class="decorate-list position-left"></div>
+							<div class="decorate-list position-right"></div>
+							<div class="scroll-box">
+								<ul class="scroll-title-box">
+									<li>内容</li>
+									<li>负责人</li>
+									<li>截止时间</li>
+								</ul>
+								<div class="scroll-content-box">
+									<div class="scroll-content-inner-box">
+										<ul class="need-do-box position-left-top">
+											<li>
+												<div>5号楼三单元人体感应器报警</div>
+												<div>赵晋</div>
+												<div>2019.08.10</div>
+											</li>
+											<li>
+												<div>5号楼三单元人体感应器报警</div>
+												<div>赵晋</div>
+												<div>2019.08.10</div>
+											</li>
+											<li>
+												<div>5号楼三单元人体感应器报警</div>
+												<div>赵晋</div>
+												<div>2019.08.10</div>
+											</li>
+											<li>
+												<div>5号楼三单元人体感应器报警</div>
+												<div>赵晋</div>
+												<div>2019.08.10</div>
+											</li>
+											<li>
+												<div>5号楼三单元人体感应器报警</div>
+												<div>赵晋</div>
+												<div>2019.08.10</div>
+											</li>
+											<li>
+												<div>5号楼三单元人体感应器报警</div>
+												<div>赵晋</div>
+												<div>2019.08.10</div>
+											</li>
+											<li>
+												<div>5号楼三单元人体感应器报警</div>
+												<div>赵晋</div>
+												<div>2019.08.10</div>
+											</li>
+											<li>
+												<div>5号楼三单元人体感应器报警</div>
+												<div>赵晋</div>
+												<div>2019.08.10</div>
+											</li>
+											<li>
+												<div>5号楼三单元人体感应器报警</div>
+												<div>赵晋</div>
+												<div>2019.08.10</div>
+											</li>
+											<li>
+												<div>5号楼三单元人体感应器报警</div>
+												<div>赵晋</div>
+												<div>2019.08.10</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="column-list-box column-list-width-50">
+				<div class="row-list-box row-list-height-100">
+					<div class="row-list-inner-box">
+						<div class="row-list-content-box">
+							<div class="decorate-list position-left"></div>
+							<div class="decorate-list position-right"></div>
+							<!--<div class="scale-opera-box">
+								<div class="icon icon-opera-add"></div>
+								<div class="range-box">
+									<div class="range-slider position-left">100%</div>
+								</div>
+								<div class="icon icon-opera-reduce"></div>
+							</div>-->
+							<!--<div class="floor-list-box">
+								<div class="icon icon-arrow-up" onclick="clickRolling('floor-inner-list',0);"></div>
+								<div class="floor-list">
+									<ul class="floor-inner-list position-left-top">
+										<li class="selected">1层</li>
+										<li>2层</li>
+										<li>3层</li>
+										<li>4层</li>
+										<li>5层</li>
+										<li>6层</li>
+										<li>7层</li>
+									</ul>
+								</div>
+								<div class="icon icon-arrow-down" onclick="clickRolling('floor-inner-list',1);"></div>
+							</div>-->
+							<div class="building-box">
+								<div class="building-content-box">
+									<div class="building-content-inner-box">
+										<ul>
+											<li></li>
+											<li></li>
+											<li class="selected"></li>
+											<li></li>
+											<li></li>
+											<li class="selected"></li>
+											<li></li>
+											<li></li>
+											<li class="selected"></li>
+											<li></li>
+											<li></li>
+										</ul>
+										<div class="icon icon-tem-and-hum icon-tem-and-hum1">
+											<div class="floor-tip-box position-left">
+												<div class="tip-circle-box position-right"></div>
+												<div class="tip-box position-left">
+													<p>3号温湿度检测器</p>
+													<p>温度：<span class="tem-text">36度</span> 湿度：<span class="hum-text">43度</span></p>
+												</div>
+											</div>
+										</div>
+										<div class="icon icon-tem-and-hum icon-tem-and-hum2">
+											<div class="floor-tip-box position-left">
+												<div class="tip-circle-box position-right"></div>
+												<div class="tip-box position-left">
+													<p>3号温湿度检测器</p>
+													<p>温度：<span class="tem-text">36度</span> 湿度：<span class="hum-text">43度</span></p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="tab-box">
+									<div class="icon icon-tab-arrow-left"></div>
+									<div class="text">1号楼</div>
+									<div class="icon icon-tab-arrow-right"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<div class="column-list-box column-list-width-25">
+				<div class="row-list-box row-list-height-33">
+					<div class="row-list-inner-box">
+						<div class="row-list-title-box">
+							<div class="row-list-title-text-box">
+								<div class="row-list-title-text">漏水检测传感器</div>
+								<div class="title-decorate"></div>
+							</div>
+						</div>
+						<div class="row-list-content-box">
+							<div class="decorate-list position-left"></div>
+							<div class="decorate-list position-right"></div>
+							<div class="scroll-box">
+								<ul class="scroll-title-box">
+									<li>位置</li>
+									<li>状态</li>
+									<li>时间</li>
+								</ul>
+								<div class="scroll-content-box">
+									<div class="scroll-content-inner-box">
+										<ul class="water-leakage-check-box position-left-top">
+											<li>
+												<div>5号楼二单元3层</div>
+												<div class="state-text-color0">正常</div>
+												<div>2019-10-10 16:42:40</div>
+											</li>
+											<li>
+												<div>5号楼二单元3层</div>
+												<div class="state-text-color1">故障</div>
+												<div>2019-10-10 16:42:40</div>
+											</li>
+											<li>
+												<div>5号楼二单元3层</div>
+												<div class="state-text-color0">正常</div>
+												<div>2019-10-10 16:42:40</div>
+											</li>
+											<li>
+												<div>5号楼二单元3层</div>
+												<div class="state-text-color1">故障</div>
+												<div>2019-10-10 16:42:40</div>
+											</li>
+											<li>
+												<div>5号楼二单元3层</div>
+												<div class="state-text-color0">正常</div>
+												<div>2019-10-10 16:42:40</div>
+											</li>
+											<li>
+												<div>5号楼二单元3层</div>
+												<div class="state-text-color1">故障</div>
+												<div>2019-10-10 16:42:40</div>
+											</li>
+											<li>
+												<div>5号楼二单元3层</div>
+												<div class="state-text-color0">正常</div>
+												<div>2019-10-10 16:42:40</div>
+											</li>
+											<li>
+												<div>5号楼二单元3层</div>
+												<div class="state-text-color1">故障</div>
+												<div>2019-10-10 16:42:40</div>
+											</li>
+											<li>
+												<div>5号楼二单元3层</div>
+												<div class="state-text-color0">正常</div>
+												<div>2019-10-10 16:42:40</div>
+											</li>
+											<li>
+												<div>5号楼二单元3层</div>
+												<div class="state-text-color1">故障</div>
+												<div>2019-10-10 16:42:40</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row-list-box row-list-height-33">
+					<div class="row-list-inner-box">
+						<div class="row-list-title-box">
+							<div class="row-list-title-text-box">
+								<div class="row-list-title-text">人体感应器</div>
+								<div class="title-decorate"></div>
+							</div>
+						</div>
+						<div class="row-list-content-box">
+							<div class="decorate-list position-left"></div>
+							<div class="decorate-list position-right"></div>
+							<div class="scroll-box">
+								<ul class="scroll-title-box">
+									<li>位置</li>
+									<li>状态</li>
+									<li>时间</li>
+								</ul>
+								<div class="scroll-content-box">
+									<div class="scroll-content-inner-box">
+										<ul class="body-induction-box position-left-top">
+											<li>
+												<div>5号楼二单元3层</div>
+												<div class="state-text-color0">正常</div>
+												<div>2019-10-10 16:42:40</div>
+											</li>
+											<li>
+												<div>5号楼二单元3层</div>
+												<div class="state-text-color1">故障</div>
+												<div>2019-10-10 16:42:40</div>
+											</li>
+											<li>
+												<div>5号楼二单元3层</div>
+												<div class="state-text-color0">正常</div>
+												<div>2019-10-10 16:42:40</div>
+											</li>
+											<li>
+												<div>5号楼二单元3层</div>
+												<div class="state-text-color1">故障</div>
+												<div>2019-10-10 16:42:40</div>
+											</li>
+											<li>
+												<div>5号楼二单元3层</div>
+												<div class="state-text-color0">正常</div>
+												<div>2019-10-10 16:42:40</div>
+											</li>
+											<li>
+												<div>5号楼二单元3层</div>
+												<div class="state-text-color1">故障</div>
+												<div>2019-10-10 16:42:40</div>
+											</li>
+											<li>
+												<div>5号楼二单元3层</div>
+												<div class="state-text-color0">正常</div>
+												<div>2019-10-10 16:42:40</div>
+											</li>
+											<li>
+												<div>5号楼二单元3层</div>
+												<div class="state-text-color1">故障</div>
+												<div>2019-10-10 16:42:40</div>
+											</li>
+											<li>
+												<div>5号楼二单元3层</div>
+												<div class="state-text-color0">正常</div>
+												<div>2019-10-10 16:42:40</div>
+											</li>
+											<li>
+												<div>5号楼二单元3层</div>
+												<div class="state-text-color1">故障</div>
+												<div>2019-10-10 16:42:40</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row-list-box row-list-height-33">
+					<div class="row-list-inner-box">
+						<div class="row-list-title-box">
+							<div class="row-list-title-text-box">
+								<div class="row-list-title-text">干节点检测器</div>
+								<div class="title-decorate"></div>
+							</div>
+						</div>
+						<div class="row-list-content-box">
+							<div class="decorate-list position-left"></div>
+							<div class="decorate-list position-right"></div>
+							<div class="scroll-box">
+								<ul class="scroll-title-box">
+									<li>位置</li>
+									<li>状态</li>
+									<li>时间</li>
+								</ul>
+								<div class="scroll-content-box">
+									<div class="scroll-content-inner-box">
+										<ul class="dry-node-box position-left-top">
+											<li>
+												<div>5号楼二单元3层</div>
+												<div class="state-text-color0">正常</div>
+												<div>2019-10-10 16:42:40</div>
+											</li>
+											<li>
+												<div>5号楼二单元3层</div>
+												<div class="state-text-color1">故障</div>
+												<div>2019-10-10 16:42:40</div>
+											</li>
+											<li>
+												<div>5号楼二单元3层</div>
+												<div class="state-text-color0">正常</div>
+												<div>2019-10-10 16:42:40</div>
+											</li>
+											<li>
+												<div>5号楼二单元3层</div>
+												<div class="state-text-color1">故障</div>
+												<div>2019-10-10 16:42:40</div>
+											</li>
+											<li>
+												<div>5号楼二单元3层</div>
+												<div class="state-text-color0">正常</div>
+												<div>2019-10-10 16:42:40</div>
+											</li>
+											<li>
+												<div>5号楼二单元3层</div>
+												<div class="state-text-color1">故障</div>
+												<div>2019-10-10 16:42:40</div>
+											</li>
+											<li>
+												<div>5号楼二单元3层</div>
+												<div class="state-text-color0">正常</div>
+												<div>2019-10-10 16:42:40</div>
+											</li>
+											<li>
+												<div>5号楼二单元3层</div>
+												<div class="state-text-color1">故障</div>
+												<div>2019-10-10 16:42:40</div>
+											</li>
+											<li>
+												<div>5号楼二单元3层</div>
+												<div class="state-text-color0">正常</div>
+												<div>2019-10-10 16:42:40</div>
+											</li>
+											<li>
+												<div>5号楼二单元3层</div>
+												<div class="state-text-color1">故障</div>
+												<div>2019-10-10 16:42:40</div>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script>
+		loadVue(param);
+		var needDoTimer = null;
+		var waterLeakageCheckTimer = null;
+		var bodyInductionTimer = null;
+		var DryNodeTimer = null;
+		var equipmentStateChart = echarts.init($(".equipment-state-box").get(0));
+		$(function() {
+			seamlessRolling(needDoTimer, $(".need-do-box"));
+			seamlessRolling(waterLeakageCheckTimer, $(".water-leakage-check-box"));
+			seamlessRolling(bodyInductionTimer, $(".body-induction-box"));
+			seamlessRolling(DryNodeTimer, $(".dry-node-box"));
+			getEquipmentState();
+			resetChartSize();
+		})
+
+		//		function operaFloorScale(type) {
+		//			var sliderStep = setData.sliderStep;
+		//			if(type == 0) {
+		//				if(sliderStep == 2) {
+		//					layer.msg("不能放大了哦");
+		//					return;
+		//				}
+		//				sliderStep += 0.1;
+		//			} else if(type == 1) {
+		//				if(sliderStep == 0) {
+		//					layer.msg("不能缩小了哦");
+		//					return;
+		//				}
+		//				sliderStep -= 0.1;
+		//			}
+		//			sliderStep = parseFloat(sliderStep);
+		//			setData.sliderStep = sliderStep;
+		//			$("#floorImage").zoomMarker_Zoom(null, sliderStep);
+		//			$(".range-slider").css("top", top * 100 + "%");
+		//		}
+
+		function getEquipmentState() {
+			var param = {}
+			var maintenanceInfo = [{
+				name: '信号弱',
+				value: "185",
+			}, {
+				name: '正常',
+				value: "142",
+			}, {
+				name: '低电量',
+				value: "140",
+			}, {
+				name: '离线',
+				value: "120",
+			}];
+			equipmentStateChart.setOption({
+				tooltip: {
+					trigger: 'item',
+					formatter: "{a} <br/>{b} : {c}次 ({d}%)"
+				},
+				legend: {
+					bottom: "0",
+					itemWidth: 12,
+					itemHeight: 6,
+					textStyle: {
+						color: "#fff",
+						fontSize: "10"
+					},
+					data: ['信号弱', "正常", "低电量", "离线"]
+				},
+				series: [{
+					name: '设备状态',
+					type: 'pie',
+					radius: ["40%", "60%"],
+					label: {
+						normal: {
+							show: true
+						}
+					},
+					labelLine: {
+						normal: {
+							show: true
+						}
+					},
+					data: maintenanceInfo
+				}],
+				color: ['#f50b0c', '#1bffe6', '#fe8213', '#ffc703']
+			}, true);
+		}
+
+		function resetChartSize() {
+			bindWindowChange(function() {
+				equipmentStateChart.resize();
+			})
+		}
+	</script>
+
+</html>
