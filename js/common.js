@@ -1,4 +1,5 @@
 //登录返回的accessToken令牌
+var language = window.localStorage.getItem("language") ? window.localStorage.getItem("language") : 'zh';
 var localHost = window.localStorage.getItem("localHost");
 var accessToken = window.localStorage.getItem("accessToken");
 var accountInfo = window.localStorage.getItem("accountInfo") ? JSON.parse(window.localStorage.getItem("accountInfo")) : getQueryString("accountInfo");
@@ -49,14 +50,14 @@ var index = parent.layer.getFrameIndex(window.name);
 //初始化vue
 var param = {
 	parentData: "",
+	language: language,
 	dataList: [],
 	allisActive: false,
 	totalPage: 0,
 	pageSize: 0,
 	currentPage: 0,
 	count: 0,
-	dataLength: 0,
-	su: accountInfo.su
+	dataLength: 0
 }
 
 function nextTick(callback) {
@@ -90,6 +91,49 @@ function judeDate(date) {
 	}
 	date = new Date(date);
 	return date;
+}
+
+function resetSpecialTime(date, flag) {   
+	var array = date.split("T"); 
+	var dateArray = array[0].split('-');  
+	var year = dateArray[0];
+	var month = dateArray[1];
+	var day = dateArray[2];
+	var timeArray = array[1].split('.')[0].split(':');
+	var hh = timeArray[0]; 
+	var mm = timeArray[1];
+	var ss = timeArray[2]; 
+	if(flag == 0) {
+		return year + "-" + month + "-" + day + " " + hh + ":" + mm + ":" + ss; 
+	} else if(flag == 1) {
+		return year + "-" + month + "-" + day + " " + hh + ":" + mm; 
+	} else if(flag == 2) {
+		return year + "-" + month + "-" + day + " " + hh; 
+	} else if(flag == 3) {
+		return year + "-" + month + "-" + day; 
+	} else if(flag == 4) {
+		return year + "-" + month; 
+	} else if(flag == 5) {
+		return year; 
+	} else if(flag == 6) {
+		return year + "年" + month + "月" + day + "日 " + hh + "时" + mm + "分" + ss + "秒"; 
+	} else if(flag == 7) {
+		return year + "年" + month + "月" + day + "日 " + hh + "时" + mm + "分"; 
+	} else if(flag == 8) {
+		return year + "年" + month + "月" + day + "日 " + hh + "时";
+	} else if(flag == 9) {
+		return year + "年" + month + "月" + day + "日 ";
+	} else if(flag == 10) {
+		return year + "年" + month + "月";
+	} else if(flag == 11) {
+		return year + "年"; 
+	} else if(flag == 12) {
+		return month + "月" + day + "日 ";
+	} else if(flag == 13) {
+		return hh + "时" + mm + "分" + ss + "秒"; 
+	} else if(flag == 14) {
+		return hh + "时" + mm + "分"; 
+	}
 }
 
 //转换yy-mm-dd hh-mm-ss，0精确到秒，1精确到分，2精确到时，3精确到日，4精确到月，5精确到年
@@ -170,6 +214,9 @@ function getAppointDate(number, type) {
 }
 
 function loadVue(param) {
+	var translater = new Translater({
+		lang: language
+	});
 	setData = new Vue({
 		el: '.VDOM',
 		data: param,
@@ -204,7 +251,7 @@ function request(method, requestUrl, param, showLoading, okCallback, noCallback)
 	var timestamp = new Date().getTime();
 	if(showLoading == true) {
 		var loadding = layer.load(1, {
-			shade: [0.2, '#333'],
+			shade: [0.2, '#fafafa'],
 			area: ['37px', '37px']
 		});
 	}
@@ -220,21 +267,18 @@ function request(method, requestUrl, param, showLoading, okCallback, noCallback)
 		data: param,
 		dataType: 'json',
 		success: function(res) {
-			if(res.code == "0" || res.code == "0000") {
+			if(res.code == "0") {
 				okCallback(res);
 			} else {
 				noCallback(res);
 			}
 			if(isPage == true) {
 				idList = [];
-				var dataInfo = res.data;
-				setData.dataLength = dataInfo.list.length;
-				if(dataInfo.totalPage) {
-					setData.totalPage = dataInfo.totalPage;
-				}
-				setData.pageSize = dataInfo.pageSize;
-				setData.currentPage = dataInfo.pageNo;
-				setData.count = dataInfo.total;
+				setData.dataLength = res.data.length;
+				setData.totalPage = res.totalPage;
+				setData.pageSize = res.pageSize;
+				setData.currentPage = res.currentPage;
+				setData.count = res.count;
 			}
 			if(showLoading == true) {
 				layer.closeAll('loading');
@@ -248,27 +292,29 @@ function request(method, requestUrl, param, showLoading, okCallback, noCallback)
 	});
 }
 
-function hikRequest(param, callback) {
-	var showLoading = param.showLoading;
-	var requestUrl = "/artemis/post/string" + "?path=" + param.path;
-	param = param.param;
-	request("POST", requestUrl, param, showLoading, function(res) {
-		callback(res);
-	}, function(res) {
-		layer.msg("AK,SK校验失败");
-	});
-}
-
-function hikLogin(callback) {
-	var param = {
-		username: "admin",
-		password: $.md5("admin")
-	}
-	hikRequest("GET", "/api/v1/login", param, true, function(res) {
-		callback();
-	}, function(res) {
-		layer.msg("获取外网token失败");
-	});
+function getLanguage(query, callback) {
+	var salt = (new Date).getTime();
+	var from = 'auto';
+	var sign = $.md5(baiduAppId + query + salt + baiduKey);
+	setTimeout(function() {
+		$.ajax({
+			url: 'http://api.fanyi.baidu.com/api/trans/vip/translate',
+			type: 'get',
+			dataType: 'jsonp',
+			data: {
+				q: query,
+				appid: baiduAppId,
+				salt: salt,
+				from: from,
+				to: language,
+				sign: sign
+			},
+			success: function(res) {
+				var content = res.trans_result;
+				callback(content);
+			}
+		});
+	}, 1000);
 }
 
 //加载全屏模板
@@ -328,8 +374,7 @@ function openLog(logType, title) {
 function judeToken() {
 	var accessToken = window.localStorage.getItem("accessToken");
 	var localHost = window.localStorage.getItem("localHost");
-	var accountInfo = JSON.parse(window.localStorage.getItem("accountInfo"));
-	if(accessToken == "" || accessToken == null || accountInfo.pmcId == -1 || host != localHost) {
+	if(accessToken == "" || accessToken == null || host != localHost) {
 		quit();
 		return false;
 	}
@@ -791,22 +836,20 @@ function downloadScanCode(canvasDom, downloadDom) {
 }
 
 //无缝滚动
-function seamlessRolling(timer, dom) {
+function seamlessRolling(dom) {
 	var height = dom.outerHeight(true);
 	var parentHeight = dom.parent().outerHeight(true);
 	var H = dom.children().outerHeight(true);
 	if(height > parentHeight) {
-		clearInterval(timer);
-		timer = setInterval(function() {
-			var top = dom.position().top;
-			if(top <= (parentHeight - height)) {
-				top = 0;
-				dom.css("top", "0");
-			}
-			dom.stop().animate({
-				top: top - H
-			}, 2000);
-		}, 4000);
+		var top = dom.position().top;
+		if(top <= (parentHeight - height)) {
+			top = 0;
+			dom.css("top", "0");
+			return false;
+		}
+		dom.stop().animate({
+			top: top - H
+		}, 400);
 	}
 }
 
@@ -835,11 +878,14 @@ function clickRolling(dom, type) {
 	}
 }
 
+//鼠标略过滚动停止
+function stopScroll(timer) {
+	clearInterval(eval(timer));
+}
+
+//监听窗口变化
 function bindWindowChange(callback) {
 	$(window).resize(function() {
-		callback();
-	})
-	$(window).ready(function() {
 		callback();
 	})
 }
@@ -888,14 +934,42 @@ function getTotalFee(dataList) {
 }
 
 //获取服务JSON
-function getService(callback) {
+function getJson(flag, callback) {
 	var timestamp = new Date().getTime();
-	var requestUrl = host + "/tslsmart/json/service.json?timestamp=" + timestamp
+	if(flag == "0") {
+		var jsonName = "service";
+	}
+	var requestUrl = host + "/tslsmart/json/" + jsonName + ".json?timestamp=" + timestamp
 	$.getJSON(requestUrl, function(res) {
-		var serviceList = res;
-		serviceList.sort(resetSort("sort", 1));
-		callback(res);
+		var dataList = res;
+		dataList.sort(resetSort("sort", 1));
+		callback(dataList);
 	})
+}
+
+function judeIE(callback) {
+	var ua = window.navigator.userAgent;
+	if((ua.indexOf('MSIE') > -1) || (ua.indexOf('Trident/') > -1)) {
+		callback();
+	}
+}
+
+function switchLanguage(language) {
+	window.localStorage.setItem("language", language);
+	reloadPage();
+}
+
+function judeLineFeed(strArray, callback) {
+	var resArray = [];
+	var dst = strArray[0].dst;
+	if(dst.indexOf("\n") > -1) {
+		resArray = dst.split("\n");
+	} else {
+		for(var i = 0; i < strArray.length; i++) {
+			resArray.push(strArray[i].dst);
+		}
+	}
+	callback(resArray);
 }
 
 //正则验证

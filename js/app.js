@@ -260,7 +260,7 @@ function request(method, requestUrl, param, showLoading, okCallback, noCallback)
 		},
 		error: function(res) {
 			if(res.status == '401' || res.status == '402' || res.status == '403' || res.status == '404' || res.status == '405' || res.status == '407' || res.status == '413' || res.status == '414' || res.status == '415' || res.status == '500' || res.status == '502' || res.status == '503' || res.status == '504' || res.status == '505') {
-				window.location.href = host + '/linklive/part/err.html';
+				window.location.href = host + '/tslsmart/part/err.html';
 			}
 		}
 	});

@@ -1,11 +1,15 @@
 $(function() {
-	param.timestamp = "";
-	param.currentTime = "";
-	param.accountName = accountInfo.name;
+	param.accountName = "管理员";
+	param.defaultUrl = "";
 	loadVue(param);
-	loadData();
-	loadTime();
 	resetSize();
+	getLanguage(setData.accountName, function(res) {
+		setData.accountName = res[res.length - 1].dst;
+		setTimeout(function() {
+			var timestamp = new Date().getTime()
+			setData.defaultUrl = "index.html?timestamp=" + timestamp
+		}, 1000);
+	});
 })
 
 window.onresize = function() {
@@ -15,22 +19,4 @@ window.onresize = function() {
 function resetSize() {
 	var windowHeight = $(document).height();
 	$(".main-box").height(windowHeight - 78);
-}
-
-//加载菜单数据
-function loadData() {
-	var timestamp = new Date().getTime();
-	setData.communityName = communityInfo.name;
-	setData.timestamp = timestamp;
-}
-
-//加载当前时间
-function loadTime() {
-	var loadTime = setInterval(function() {
-		var checkI = judeToken();
-		if(checkI == true) {
-			var date = new Date();
-			setData.currentTime = resetTime(date, 0);
-		}
-	}, 1000);
 }

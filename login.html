@@ -12,63 +12,90 @@
 		<meta http-equiv="Expires" content="0">
 		<link rel="shortcut icon" href="img/common/logo.png" type="image/x-icon" />
 		<link rel="stylesheet" href="css/reset.css" />
-		<link rel="stylesheet" href="css/login.css?v=e3d0cf7dec" />
+		<link rel="stylesheet" href="css/login.css?v=4966c019ce" />
 		<script src="js/jquery-1.9.1.min.js"></script>
-		<script src="js/postUrl.js?v=62b1256164"></script>
-		<script src="js/common.js?v=929df8b434"></script>
+		<script src="js/translater.min.js"></script>
+		<script src="js/encryption/jquery.md5.js"></script>
+		<script src="js/vue.min.js"></script>
 		<script src="layui/layui.all.js"></script>
-		<script src="js/login.js?v=5016796ffb"></script>
+		<script src="js/postUrl.js?v=950197219e"></script>
+		<script src="js/common.js?v=6eb2dfb821"></script>
+		<script src="js/login.js?v=09b3bdee57"></script>
 	</head>
 
 	<body>
-		<div class="login-box">
-			<div class="column-list-box illustration-bg"></div>
-			<div class="column-list-box">
-				<div class="login-inner-box">
-					<div class="login-title-box">
-						<div class="login-title-text">思诺云AGS管理系统-单位版</div>
-						<div class="login-title-dir">河南思诺智慧科技</div>
+		<div class="login-box VDOM" v-cloak>
+			<div class="nav-box">
+				<div class="logo-img"></div>
+				<div class="switch-language-box" v-if="language == 'en'">
+					<span onclick="switchLanguage('zh');">简</span> | <span onclick="switchLanguage('cht');">繁</span>
+				</div>
+				<div class="switch-language-box" v-else-if="language == 'zh'">
+					<span onclick="switchLanguage('cht');">繁</span> | <span onclick="switchLanguage('en');">EN</span>
+				</div>
+				<div class="switch-language-box" v-else>
+					<span onclick="switchLanguage('zh');">简</span> | <span onclick="switchLanguage('en');">EN</span>
+				</div>
+			</div>
+			<div class="login-inner-box">
+				<div class="login-title-box">
+					<div class="login-title-text normal-letter" v-if="language == 'en'">
+						Management Platform
 					</div>
-					<div class="login-content-box">
-						<div class="login-content-inner-box">
-							<div class="login-content-title-box">用户登录</div>
-							<div class="login-list-box">
-								<div class="login-list">
-									<div class="login-list-inner-box">
-										<div class="icon icon-account"></div>
-										<div class="login-input-box">
-											<input type="text" value="" name="" id="account" autocomplete="off" placeholder="请输入用户名" />
-										</div>
+					<div class="login-title-text" v-else>
+						综合管理平台
+						<!--{cht}綜合管理平臺-->
+					</div>
+				</div>
+				<div class="login-content-box">
+					<div class="login-content-inner-box">
+						<div class="login-content-title-box">
+							用户登录
+							<!--{cht}用戶登錄-->
+							<!--{en}User Login-->
+						</div>
+						<div class="login-list-box">
+							<div class="login-list">
+								<div class="login-list-inner-box">
+									<div class="icon icon-account"></div>
+									<div class="login-input-box">
+										<input type="text" value="" name="" id="account" autocomplete="off" v-bind:placeholder="placeholderArray[0]" />
 									</div>
-								</div>
-								<div class="login-list">
-									<div class="login-list-inner-box">
-										<div class="icon icon-password"></div>
-										<div class="login-input-box">
-											<input type="password" value="" name="" id="password" autocomplete="off" placeholder="请输入登录密码" />
-										</div>
-									</div>
-								</div>
-								<div class="login-list">
-									<div class="login-list-inner-box login-inputCode-box f_l">
-										<div class="icon icon-token"></div>
-										<div class="login-input-box">
-											<input type="text" value="" name="" id="inputCode" placeholder="请输入验证码" />
-										</div>
-									</div>
-									<div class="login-list-inner-box login-inputCode-text-box f_r" id="checkCode" onclick="createCode()"></div>
 								</div>
 							</div>
-							<div class="login-btn login-disabled-btn" onclick="login();">登录</div>
+							<div class="login-list">
+								<div class="login-list-inner-box">
+									<div class="icon icon-password"></div>
+									<div class="login-input-box">
+										<input type="password" value="" name="" id="password" autocomplete="off" v-bind:placeholder="placeholderArray[1]" />
+									</div>
+								</div>
+							</div>
+							<div class="login-list">
+								<div class="login-list-inner-box login-inputCode-box f_l">
+									<div class="icon icon-token"></div>
+									<div class="login-input-box">
+										<input type="text" value="" name="" id="inputCode" v-bind:placeholder="placeholderArray[2]" />
+									</div>
+								</div>
+								<div class="login-list-inner-box login-inputCode-text-box f_r" onclick="createCode()">{{checkCode}}</div>
+							</div>
+						</div>
+						<div class="login-btn login-disabled-btn" onclick="login();">
+							登录
+							<!--{cht}登錄-->
+							<!--{en}Login-->
 						</div>
 					</div>
 				</div>
 			</div>
-			<div class="copyright">Copyright © 2019 sinuoxiaofang.com 思诺云科技</div>
+			<div class="copyright">©2019 Terminus Technologies Co.,Ltd.All Rights Reserved.渝ICP备14002581号 | Design by UDL</div>
 		</div>
 	</body>
 	<script>
-		createCode();
+		var translater = new Translater({
+			lang: language
+		});
 	</script>
 
 </html>

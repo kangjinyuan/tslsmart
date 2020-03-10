@@ -12,18 +12,15 @@
 		<meta http-equiv="Expires" content="0">
 		<link rel="shortcut icon" href="img/common/logo.png" type="image/x-icon" />
 		<link rel="stylesheet" href="css/reset.css" />
-		<link rel="stylesheet" href="css/common.css?v=b4f7195f99" />
+		<link rel="stylesheet" href="css/common.css?v=41b9775c38" />
 		<script src="js/jquery-1.9.1.min.js"></script>
+		<script src="js/translater.min.js"></script>
+		<script src="js/encryption/jquery.md5.js"></script>
 		<script src="js/echarts-all-3.js"></script>
-		<script src="js/circleChart.es5.min.js"></script>
-		<script src="js/hammer.min.js"></script>
-		<script src="js/zoom-marker.min.js"></script>
-		<script src="js/jquery.mousewheel.min.js"></script>
 		<script src="layui/layui.all.js"></script>
-		<script src="js/hls.min.js"></script>
 		<script src="js/vue.min.js"></script>
-		<script src="js/postUrl.js?v=62b1256164"></script>
-		<script src="js/common.js?v=929df8b434"></script>
+		<script src="js/postUrl.js?v=950197219e"></script>
+		<script src="js/common.js?v=6eb2dfb821"></script>
 	</head>
 
 	<body>
@@ -31,26 +28,61 @@
 			<div class="column-list-box column-list-width-25">
 				<div class="row-list-box row-list-height-25">
 					<div class="row-list-inner-box">
-						<div class="row-list-title-box">今日报警</div>
+						<div class="row-list-title-box">
+							今日报警
+							<!--{cht}今日報警-->
+							<!--{en}Today Alarm-->
+						</div>
 						<div class="row-list-content-box">
 							<div class="decorate-list position-left"></div>
 							<div class="decorate-list position-right"></div>
-							<div class="today-alert-box position-center">
+							<div class="today-alert-box">
 								<div class="today-alert-title-box">
-									<div class="today-alert-title-text position-left-bottom">报警总数:<span>300</span>起</div>
+									<div class="today-alert-title-text position-left-bottom">
+										报警总数:
+										<!--{cht}報警總數：-->
+										<!--{en}Total:-->
+										<span>300</span> 起
+										<!--{cht}起-->
+										<!--{en}Times-->
+									</div>
 								</div>
 								<ul class="today-alert-content-box">
 									<li>
-										<div class="today-alert-text today-alert-number"><span>18</span>起</div>
-										<div class="today-alert-text">漏水检测传感器</div>
+										<div class="today-alert-text today-alert-number">
+											<span>18</span> 起
+											<!--{cht}起-->
+											<!--{en}Times-->
+										</div>
+										<div class="today-alert-text">
+											漏水检测传感器
+											<!--{cht}漏水檢測感測器-->
+											<!--{en}Water Leakage-->
+										</div>
 									</li>
 									<li>
-										<div class="today-alert-text today-alert-number"><span>8</span>起</div>
-										<div class="today-alert-text">人体感应器</div>
+										<div class="today-alert-text today-alert-number">
+											<span>8</span> 起
+											<!--{cht}起-->
+											<!--{en}Times-->
+										</div>
+										<div class="today-alert-text">
+											人体感应器
+											<!--{cht}人體感應器-->
+											<!--{en}IR Motion-->
+										</div>
 									</li>
 									<li>
-										<div class="today-alert-text today-alert-number"><span>12</span>起</div>
-										<div class="today-alert-text">干节点检测器</div>
+										<div class="today-alert-text today-alert-number">
+											<span>12</span> 起
+											<!--{cht}起-->
+											<!--{en}Times-->
+										</div>
+										<div class="today-alert-text">
+											干接点检测器
+											<!--{cht}幹接點檢測器-->
+											<!--{en}Dry Contact-->
+										</div>
 									</li>
 								</ul>
 							</div>
@@ -60,10 +92,9 @@
 				<div class="row-list-box row-list-height-35">
 					<div class="row-list-inner-box">
 						<div class="row-list-title-box">
-							<div class="row-list-title-text-box">
-								<div class="row-list-title-text">设备状态</div>
-								<div class="title-decorate"></div>
-							</div>
+							设备状态
+							<!--{cht}設備狀態-->
+							<!--{en}Device Health-->
 						</div>
 						<div class="row-list-content-box">
 							<div class="decorate-list position-left"></div>
@@ -71,7 +102,11 @@
 							<div class="equipment-state-box position-center"></div>
 							<div class="equipment-state-text-box">
 								<p>487</p>
-								<p>异常行为</p>
+								<p>
+									设备总数
+									<!--{cht}設備總數-->
+									<!--{en}Total-->
+								</p>
 							</div>
 						</div>
 					</div>
@@ -79,71 +114,175 @@
 				<div class="row-list-box row-list-height-40">
 					<div class="row-list-inner-box">
 						<div class="row-list-title-box">
-							<div class="row-list-title-text-box">
-								<div class="row-list-title-text">待办事项</div>
-								<div class="title-decorate"></div>
-							</div>
+							待办事项
+							<!--{cht}待辦事項-->
+							<!--{en}To-Do List-->
 						</div>
 						<div class="row-list-content-box">
 							<div class="decorate-list position-left"></div>
 							<div class="decorate-list position-right"></div>
 							<div class="scroll-box">
 								<ul class="scroll-title-box">
-									<li>内容</li>
-									<li>负责人</li>
-									<li>截止时间</li>
+									<li>
+										内容
+										<!--{cht}內容-->
+										<!--{en}Content-->
+									</li>
+									<li>
+										负责人
+										<!--{cht}負責人-->
+										<!--{en}Owner-->
+									</li>
+									<li>
+										截止时间
+										<!--{cht}截止時間-->
+										<!--{en}Deadline-->
+									</li>
 								</ul>
 								<div class="scroll-content-box">
 									<div class="scroll-content-inner-box">
-										<ul class="need-do-box position-left-top">
+										<ul class="need-do-box position-left-top" onmouseenter="stopScroll('needDoTimer');" onmouseleave="setNeedDoTimer();">
 											<li>
-												<div>5号楼三单元人体感应器报警</div>
-												<div>赵晋</div>
+												<div>
+													5号楼三单元人体感应器报警
+													<!--{cht}5號樓三單元人體感應器報警-->
+													<!--{en}Building 5 unit 3 human body sensor alarm-->
+												</div>
+												<div>
+													赵晋
+													<!--{cht}趙晋-->
+													<!--{en}Zhao Jin-->
+												</div>
 												<div>2019.08.10</div>
 											</li>
 											<li>
-												<div>5号楼三单元人体感应器报警</div>
-												<div>赵晋</div>
+												<div>
+													5号楼三单元人体感应器报警
+													<!--{cht}5號樓三單元人體感應器報警-->
+													<!--{en}Building 5 unit 3 human body sensor alarm-->
+												</div>
+												<div>
+													赵晋
+													<!--{cht}趙晋-->
+													<!--{en}Zhao Jin-->
+												</div>
 												<div>2019.08.10</div>
 											</li>
 											<li>
-												<div>5号楼三单元人体感应器报警</div>
-												<div>赵晋</div>
+												<div>
+													5号楼三单元人体感应器报警
+													<!--{cht}5號樓三單元人體感應器報警-->
+													<!--{en}Building 5 unit 3 human body sensor alarm-->
+												</div>
+												<div>
+													赵晋
+													<!--{cht}趙晋-->
+													<!--{en}Zhao Jin-->
+												</div>
 												<div>2019.08.10</div>
 											</li>
 											<li>
-												<div>5号楼三单元人体感应器报警</div>
-												<div>赵晋</div>
+												<div>
+													5号楼三单元人体感应器报警
+													<!--{cht}5號樓三單元人體感應器報警-->
+													<!--{en}Building 5 unit 3 human body sensor alarm-->
+												</div>
+												<div>
+													赵晋
+													<!--{cht}趙晋-->
+													<!--{en}Zhao Jin-->
+												</div>
 												<div>2019.08.10</div>
 											</li>
 											<li>
-												<div>5号楼三单元人体感应器报警</div>
-												<div>赵晋</div>
+												<div>
+													5号楼三单元人体感应器报警
+													<!--{cht}5號樓三單元人體感應器報警-->
+													<!--{en}Building 5 unit 3 human body sensor alarm-->
+												</div>
+												<div>
+													赵晋
+													<!--{cht}趙晋-->
+													<!--{en}Zhao Jin-->
+												</div>
 												<div>2019.08.10</div>
 											</li>
 											<li>
-												<div>5号楼三单元人体感应器报警</div>
-												<div>赵晋</div>
+												<div>
+													5号楼三单元人体感应器报警
+													<!--{cht}5號樓三單元人體感應器報警-->
+													<!--{en}Building 5 unit 3 human body sensor alarm-->
+												</div>
+												<div>
+													赵晋
+													<!--{cht}趙晋-->
+													<!--{en}Zhao Jin-->
+												</div>
 												<div>2019.08.10</div>
 											</li>
 											<li>
-												<div>5号楼三单元人体感应器报警</div>
-												<div>赵晋</div>
+												<div>
+													5号楼三单元人体感应器报警
+													<!--{cht}5號樓三單元人體感應器報警-->
+													<!--{en}Building 5 unit 3 human body sensor alarm-->
+												</div>
+												<div>
+													赵晋
+													<!--{cht}趙晋-->
+													<!--{en}Zhao Jin-->
+												</div>
 												<div>2019.08.10</div>
 											</li>
 											<li>
-												<div>5号楼三单元人体感应器报警</div>
-												<div>赵晋</div>
+												<div>
+													5号楼三单元人体感应器报警
+													<!--{cht}5號樓三單元人體感應器報警-->
+													<!--{en}Building 5 unit 3 human body sensor alarm-->
+												</div>
+												<div>
+													赵晋
+													<!--{cht}趙晋-->
+													<!--{en}Zhao Jin-->
+												</div>
 												<div>2019.08.10</div>
 											</li>
 											<li>
-												<div>5号楼三单元人体感应器报警</div>
-												<div>赵晋</div>
+												<div>
+													5号楼三单元人体感应器报警
+													<!--{cht}5號樓三單元人體感應器報警-->
+													<!--{en}Building 5 unit 3 human body sensor alarm-->
+												</div>
+												<div>
+													赵晋
+													<!--{cht}趙晋-->
+													<!--{en}Zhao Jin-->
+												</div>
 												<div>2019.08.10</div>
 											</li>
 											<li>
-												<div>5号楼三单元人体感应器报警</div>
-												<div>赵晋</div>
+												<div>
+													5号楼三单元人体感应器报警
+													<!--{cht}5號樓三單元人體感應器報警-->
+													<!--{en}Building 5 unit 3 human body sensor alarm-->
+												</div>
+												<div>
+													赵晋
+													<!--{cht}趙晋-->
+													<!--{en}Zhao Jin-->
+												</div>
+												<div>2019.08.10</div>
+											</li>
+											<li>
+												<div>
+													5号楼三单元人体感应器报警
+													<!--{cht}5號樓三單元人體感應器報警-->
+													<!--{en}Building 5 unit 3 human body sensor alarm-->
+												</div>
+												<div>
+													赵晋
+													<!--{cht}趙晋-->
+													<!--{en}Zhao Jin-->
+												</div>
 												<div>2019.08.10</div>
 											</li>
 										</ul>
@@ -160,31 +299,9 @@
 						<div class="row-list-content-box">
 							<div class="decorate-list position-left"></div>
 							<div class="decorate-list position-right"></div>
-							<!--<div class="scale-opera-box">
-								<div class="icon icon-opera-add"></div>
-								<div class="range-box">
-									<div class="range-slider position-left">100%</div>
-								</div>
-								<div class="icon icon-opera-reduce"></div>
-							</div>-->
-							<!--<div class="floor-list-box">
-								<div class="icon icon-arrow-up" onclick="clickRolling('floor-inner-list',0);"></div>
-								<div class="floor-list">
-									<ul class="floor-inner-list position-left-top">
-										<li class="selected">1层</li>
-										<li>2层</li>
-										<li>3层</li>
-										<li>4层</li>
-										<li>5层</li>
-										<li>6层</li>
-										<li>7层</li>
-									</ul>
-								</div>
-								<div class="icon icon-arrow-down" onclick="clickRolling('floor-inner-list',1);"></div>
-							</div>-->
 							<div class="building-box">
 								<div class="building-content-box">
-									<div class="building-content-inner-box">
+									<div class="building-content-inner-box position-bottom">
 										<ul>
 											<li></li>
 											<li></li>
@@ -198,21 +315,25 @@
 											<li></li>
 											<li></li>
 										</ul>
-										<div class="icon icon-tem-and-hum icon-tem-and-hum1">
+										<div class="icon icon-tem-and-hum icon-tem-and-hum1" v-if="deviceTemHumList.length > 0">
 											<div class="floor-tip-box position-left">
 												<div class="tip-circle-box position-right"></div>
-												<div class="tip-box position-left">
-													<p>3号温湿度检测器</p>
-													<p>温度：<span class="tem-text">36度</span> 湿度：<span class="hum-text">43度</span></p>
-												</div>
-											</div>
-										</div>
-										<div class="icon icon-tem-and-hum icon-tem-and-hum2">
-											<div class="floor-tip-box position-left">
-												<div class="tip-circle-box position-right"></div>
-												<div class="tip-box position-left">
-													<p>3号温湿度检测器</p>
-													<p>温度：<span class="tem-text">36度</span> 湿度：<span class="hum-text">43度</span></p>
+												<div class="tip-box">
+													<p>{{deviceTemHumList[0].deviceInfo.deviceName}}</p>
+													<p>
+														温度:
+														<!--{cht}溫度:-->
+														<!--{en}Temp:-->
+														<span class="tem-text">
+																{{deviceTemHumList[0].temperature}}℃
+															</span> 湿度:
+														<!--{cht}濕度:-->
+														<!--{en}RH:-->
+														<span class="hum-text">
+															 	{{deviceTemHumList[0].humidity}}%
+															 </span>
+													</p>
+													<p>{{deviceTemHumList[0].createTime}}</p>
 												</div>
 											</div>
 										</div>
@@ -220,7 +341,11 @@
 								</div>
 								<div class="tab-box">
 									<div class="icon icon-tab-arrow-left"></div>
-									<div class="text">1号楼</div>
+									<div class="text">
+										1号楼
+										<!--{cht}1號樓-->
+										<!--{en}Building 1-->
+									</div>
 									<div class="icon icon-tab-arrow-right"></div>
 								</div>
 							</div>
@@ -233,72 +358,49 @@
 				<div class="row-list-box row-list-height-33">
 					<div class="row-list-inner-box">
 						<div class="row-list-title-box">
-							<div class="row-list-title-text-box">
-								<div class="row-list-title-text">漏水检测传感器</div>
-								<div class="title-decorate"></div>
-							</div>
+							漏水检测传感器
+							<!--{cht}漏水檢測感測器-->
+							<!--{en}Water Leakage-->
 						</div>
 						<div class="row-list-content-box">
 							<div class="decorate-list position-left"></div>
 							<div class="decorate-list position-right"></div>
 							<div class="scroll-box">
 								<ul class="scroll-title-box">
-									<li>位置</li>
-									<li>状态</li>
-									<li>时间</li>
+									<li>
+										位置
+										<!--{cht}位置-->
+										<!--{en}Location-->
+									</li>
+									<li>
+										状态
+										<!--{cht}狀態-->
+										<!--{en}Condition-->
+									</li>
+									<li>
+										时间
+										<!--{cht}時間-->
+										<!--{en}Time-->
+									</li>
 								</ul>
 								<div class="scroll-content-box">
 									<div class="scroll-content-inner-box">
-										<ul class="water-leakage-check-box position-left-top">
-											<li>
-												<div>5号楼二单元3层</div>
-												<div class="state-text-color0">正常</div>
-												<div>2019-10-10 16:42:40</div>
-											</li>
-											<li>
-												<div>5号楼二单元3层</div>
-												<div class="state-text-color1">故障</div>
-												<div>2019-10-10 16:42:40</div>
-											</li>
-											<li>
-												<div>5号楼二单元3层</div>
-												<div class="state-text-color0">正常</div>
-												<div>2019-10-10 16:42:40</div>
-											</li>
-											<li>
-												<div>5号楼二单元3层</div>
-												<div class="state-text-color1">故障</div>
-												<div>2019-10-10 16:42:40</div>
-											</li>
-											<li>
-												<div>5号楼二单元3层</div>
-												<div class="state-text-color0">正常</div>
-												<div>2019-10-10 16:42:40</div>
-											</li>
-											<li>
-												<div>5号楼二单元3层</div>
-												<div class="state-text-color1">故障</div>
-												<div>2019-10-10 16:42:40</div>
-											</li>
-											<li>
-												<div>5号楼二单元3层</div>
-												<div class="state-text-color0">正常</div>
-												<div>2019-10-10 16:42:40</div>
-											</li>
-											<li>
-												<div>5号楼二单元3层</div>
-												<div class="state-text-color1">故障</div>
-												<div>2019-10-10 16:42:40</div>
-											</li>
-											<li>
-												<div>5号楼二单元3层</div>
-												<div class="state-text-color0">正常</div>
-												<div>2019-10-10 16:42:40</div>
-											</li>
-											<li>
-												<div>5号楼二单元3层</div>
-												<div class="state-text-color1">故障</div>
-												<div>2019-10-10 16:42:40</div>
+										<ul class="water-leakage-check-box position-left-top" onmouseenter="stopScroll('waterTimer');" onmouseleave="setWaterTimer();">
+											<li v-for="t in deviceWaterList">
+												<div v-bind:title="t.deviceInfo.description">
+													{{t.deviceInfo.description}}
+												</div>
+												<div v-if="t.state == 0" class="state-text-color0">
+													未漏水
+													<!--{cht}未漏水-->
+													<!--{en}Normal-->
+												</div>
+												<div v-else class="state-text-color1">
+													已漏水
+													<!--{cht}已漏水-->
+													<!--{en}Triggered-->
+												</div>
+												<div>{{t.createTime | resetTime(0)}}</div>
 											</li>
 										</ul>
 									</div>
@@ -310,72 +412,49 @@
 				<div class="row-list-box row-list-height-33">
 					<div class="row-list-inner-box">
 						<div class="row-list-title-box">
-							<div class="row-list-title-text-box">
-								<div class="row-list-title-text">人体感应器</div>
-								<div class="title-decorate"></div>
-							</div>
+							人体感应器
+							<!--{cht}人體感應器-->
+							<!--{en}IR Motion-->
 						</div>
 						<div class="row-list-content-box">
 							<div class="decorate-list position-left"></div>
 							<div class="decorate-list position-right"></div>
 							<div class="scroll-box">
 								<ul class="scroll-title-box">
-									<li>位置</li>
-									<li>状态</li>
-									<li>时间</li>
+									<li>
+										位置
+										<!--{cht}位置-->
+										<!--{en}Location-->
+									</li>
+									<li>
+										状态
+										<!--{cht}狀態-->
+										<!--{en}Condition-->
+									</li>
+									<li>
+										时间
+										<!--{cht}時間-->
+										<!--{en}Time-->
+									</li>
 								</ul>
 								<div class="scroll-content-box">
 									<div class="scroll-content-inner-box">
-										<ul class="body-induction-box position-left-top">
-											<li>
-												<div>5号楼二单元3层</div>
-												<div class="state-text-color0">正常</div>
-												<div>2019-10-10 16:42:40</div>
-											</li>
-											<li>
-												<div>5号楼二单元3层</div>
-												<div class="state-text-color1">故障</div>
-												<div>2019-10-10 16:42:40</div>
-											</li>
-											<li>
-												<div>5号楼二单元3层</div>
-												<div class="state-text-color0">正常</div>
-												<div>2019-10-10 16:42:40</div>
-											</li>
-											<li>
-												<div>5号楼二单元3层</div>
-												<div class="state-text-color1">故障</div>
-												<div>2019-10-10 16:42:40</div>
-											</li>
-											<li>
-												<div>5号楼二单元3层</div>
-												<div class="state-text-color0">正常</div>
-												<div>2019-10-10 16:42:40</div>
-											</li>
-											<li>
-												<div>5号楼二单元3层</div>
-												<div class="state-text-color1">故障</div>
-												<div>2019-10-10 16:42:40</div>
-											</li>
-											<li>
-												<div>5号楼二单元3层</div>
-												<div class="state-text-color0">正常</div>
-												<div>2019-10-10 16:42:40</div>
-											</li>
-											<li>
-												<div>5号楼二单元3层</div>
-												<div class="state-text-color1">故障</div>
-												<div>2019-10-10 16:42:40</div>
-											</li>
-											<li>
-												<div>5号楼二单元3层</div>
-												<div class="state-text-color0">正常</div>
-												<div>2019-10-10 16:42:40</div>
-											</li>
-											<li>
-												<div>5号楼二单元3层</div>
-												<div class="state-text-color1">故障</div>
-												<div>2019-10-10 16:42:40</div>
+										<ul class="body-induction-box position-left-top" onmouseenter="stopScroll('irTimer');" onmouseleave="setIrTimer();">
+											<li v-for="t in deviceIrList">
+												<div v-bind:title="t.deviceInfo.description">
+													{{t.deviceInfo.description}}
+												</div>
+												<div v-if="t.state == 0" class="state-text-color0">
+													无人
+													<!--{cht}無人-->
+													<!--{en}Normal-->
+												</div>
+												<div v-else class="state-text-color1">
+													有人
+													<!--{cht}有人-->
+													<!--{en}Triggered-->
+												</div>
+												<div>{{t.createTime | resetTime(0)}}</div>
 											</li>
 										</ul>
 									</div>
@@ -387,72 +466,49 @@
 				<div class="row-list-box row-list-height-33">
 					<div class="row-list-inner-box">
 						<div class="row-list-title-box">
-							<div class="row-list-title-text-box">
-								<div class="row-list-title-text">干节点检测器</div>
-								<div class="title-decorate"></div>
-							</div>
+							干接点检测器
+							<!--{cht}幹接點檢測器-->
+							<!--{en}Dry Contact-->
 						</div>
 						<div class="row-list-content-box">
 							<div class="decorate-list position-left"></div>
 							<div class="decorate-list position-right"></div>
 							<div class="scroll-box">
 								<ul class="scroll-title-box">
-									<li>位置</li>
-									<li>状态</li>
-									<li>时间</li>
+									<li>
+										位置
+										<!--{cht}位置-->
+										<!--{en}Location-->
+									</li>
+									<li>
+										状态
+										<!--{cht}狀態-->
+										<!--{en}Condition-->
+									</li>
+									<li>
+										时间
+										<!--{cht}時間-->
+										<!--{en}Time-->
+									</li>
 								</ul>
 								<div class="scroll-content-box">
 									<div class="scroll-content-inner-box">
-										<ul class="dry-node-box position-left-top">
-											<li>
-												<div>5号楼二单元3层</div>
-												<div class="state-text-color0">正常</div>
-												<div>2019-10-10 16:42:40</div>
-											</li>
-											<li>
-												<div>5号楼二单元3层</div>
-												<div class="state-text-color1">故障</div>
-												<div>2019-10-10 16:42:40</div>
-											</li>
-											<li>
-												<div>5号楼二单元3层</div>
-												<div class="state-text-color0">正常</div>
-												<div>2019-10-10 16:42:40</div>
-											</li>
-											<li>
-												<div>5号楼二单元3层</div>
-												<div class="state-text-color1">故障</div>
-												<div>2019-10-10 16:42:40</div>
-											</li>
-											<li>
-												<div>5号楼二单元3层</div>
-												<div class="state-text-color0">正常</div>
-												<div>2019-10-10 16:42:40</div>
-											</li>
-											<li>
-												<div>5号楼二单元3层</div>
-												<div class="state-text-color1">故障</div>
-												<div>2019-10-10 16:42:40</div>
-											</li>
-											<li>
-												<div>5号楼二单元3层</div>
-												<div class="state-text-color0">正常</div>
-												<div>2019-10-10 16:42:40</div>
-											</li>
-											<li>
-												<div>5号楼二单元3层</div>
-												<div class="state-text-color1">故障</div>
-												<div>2019-10-10 16:42:40</div>
-											</li>
-											<li>
-												<div>5号楼二单元3层</div>
-												<div class="state-text-color0">正常</div>
-												<div>2019-10-10 16:42:40</div>
-											</li>
-											<li>
-												<div>5号楼二单元3层</div>
-												<div class="state-text-color1">故障</div>
-												<div>2019-10-10 16:42:40</div>
+										<ul class="dry-node-box position-left-top" onmouseenter="stopScroll('dryNodeTimer');" onmouseleave="setDryNodeTimer();">
+											<li v-for="t in deviceDryNodeList">
+												<div v-bind:title="t.deviceInfo.description">
+													{{t.deviceInfo.description}}
+												</div>
+												<div v-if="t.state == 0" class="state-text-color1">
+													未连接
+													<!--{cht}未連接-->
+													<!--{en}Normal-->
+												</div>
+												<div v-else class="state-text-color0">
+													已连接
+													<!--{cht}已連接-->
+													<!--{en}Triggered-->
+												</div>
+												<div>{{t.createTime | resetTime(0)}}</div>
 											</li>
 										</ul>
 									</div>
@@ -465,79 +521,103 @@
 		</div>
 	</body>
 	<script>
+		var deviceIr = "ffffff100000eecf"; //人体
+		var deviceTemHum = "ffffff100000eed1"; //温湿度
+		var deviceDryNode = "ffffff100000eece"; //干接点
+		var deviceWater = "ffffff100000eecb"; //漏水检测
+		param.deviceWaterList = [];
+		param.deviceIrList = [];
+		param.deviceDryNodeList = [];
+		param.deviceTemHumList = [];
 		loadVue(param);
 		var needDoTimer = null;
-		var waterLeakageCheckTimer = null;
-		var bodyInductionTimer = null;
-		var DryNodeTimer = null;
+		var waterTimer = null;
+		var irTimer = null;
+		var dryNodeTimer = null;
 		var equipmentStateChart = echarts.init($(".equipment-state-box").get(0));
-		$(function() {
-			seamlessRolling(needDoTimer, $(".need-do-box"));
-			seamlessRolling(waterLeakageCheckTimer, $(".water-leakage-check-box"));
-			seamlessRolling(bodyInductionTimer, $(".body-induction-box"));
-			seamlessRolling(DryNodeTimer, $(".dry-node-box"));
-			getEquipmentState();
-			resetChartSize();
-		})
 
-		//		function operaFloorScale(type) {
-		//			var sliderStep = setData.sliderStep;
-		//			if(type == 0) {
-		//				if(sliderStep == 2) {
-		//					layer.msg("不能放大了哦");
-		//					return;
-		//				}
-		//				sliderStep += 0.1;
-		//			} else if(type == 1) {
-		//				if(sliderStep == 0) {
-		//					layer.msg("不能缩小了哦");
-		//					return;
-		//				}
-		//				sliderStep -= 0.1;
-		//			}
-		//			sliderStep = parseFloat(sliderStep);
-		//			setData.sliderStep = sliderStep;
-		//			$("#floorImage").zoomMarker_Zoom(null, sliderStep);
-		//			$(".range-slider").css("top", top * 100 + "%");
-		//		}
+		function setWaterTimer() {
+			waterTimer = setInterval(function() {
+				seamlessRolling($(".water-leakage-check-box"));
+			}, 5000);
+		}
+
+		function setIrTimer() {
+			irTimer = setInterval(function() {
+				seamlessRolling($(".body-induction-box"));
+			}, 5000);
+		}
+
+		function setDryNodeTimer() {
+			dryNodeTimer = setInterval(function() {
+				seamlessRolling($(".dry-node-box"));
+			}, 5000);
+		}
+
+		function setNeedDoTimer() {
+			needDoTimer = setInterval(function() {
+				seamlessRolling($(".need-do-box"));
+			}, 5000);
+		}
 
 		function getEquipmentState() {
 			var param = {}
-			var maintenanceInfo = [{
-				name: '信号弱',
+			if(language == "zh") {
+				var nameArray = ["信号弱", "正常", "低电量", "离线"];
+			} else if(language == "en") {
+				var nameArray = ["Low Signal", "Healthy", "Low Power", "Offline"];
+			} else {
+				var nameArray = ["訊號弱", "正常", "低電量", "離線"];
+			}
+			var equipmentStateInfo = [{
+				name: nameArray[0],
 				value: "185",
 			}, {
-				name: '正常',
+				name: nameArray[1],
 				value: "142",
 			}, {
-				name: '低电量',
+				name: nameArray[2],
 				value: "140",
 			}, {
-				name: '离线',
+				name: nameArray[3],
 				value: "120",
 			}];
 			equipmentStateChart.setOption({
-				tooltip: {
-					trigger: 'item',
-					formatter: "{a} <br/>{b} : {c}次 ({d}%)"
-				},
 				legend: {
-					bottom: "0",
+					bottom: 2,
 					itemWidth: 12,
 					itemHeight: 6,
 					textStyle: {
 						color: "#fff",
-						fontSize: "10"
+						fontSize: 14
 					},
-					data: ['信号弱', "正常", "低电量", "离线"]
+					data: nameArray
 				},
 				series: [{
-					name: '设备状态',
+					name: "设备状态",
 					type: 'pie',
+					center: ["50%", "42%"],
 					radius: ["40%", "60%"],
 					label: {
 						normal: {
-							show: true
+							show: true,
+							textStyle: {
+								fontSize: 14
+							},
+							formatter: function(param) {
+								var name = param.data.name;
+								var value = param.data.value;
+								var percent = param.percent;
+								if(language == "zh") {
+									var content = "次\n"
+								} else if(language == "en") {
+									var content = "Times" + "\n"
+								} else {
+									var content = "次\n"
+								}
+								content = value + " " + content + percent + "%";
+								return content;
+							}
 						}
 					},
 					labelLine: {
@@ -545,9 +625,9 @@
 							show: true
 						}
 					},
-					data: maintenanceInfo
+					data: equipmentStateInfo
 				}],
-				color: ['#f50b0c', '#1bffe6', '#fe8213', '#ffc703']
+				color: ['#ff3203', '#1bffe6', '#fe8213', '#ffc703']
 			}, true);
 		}
 
@@ -556,6 +636,96 @@
 				equipmentStateChart.resize();
 			})
 		}
+
+		function loadIotDevice() {
+			var param = {
+				page: page
+			};
+			request("POST", "/iotDevice/queryList.do", param, false, function(res) {
+					var dataList = res.data;
+					var queryDeviceNameText = "";
+					var queryDescriptionText = "";
+					for(var i = 0; i < dataList.length; i++) {
+						queryDeviceNameText += dataList[i].deviceName + "\n";
+						queryDescriptionText += dataList[i].description + "\n";
+					}
+					getLanguage(queryDeviceNameText, function(res) {
+						judeLineFeed(res, function(res) {
+							for(var i = 0; i < res.length; i++) {
+								dataList[i].deviceName = res[i];
+							}
+						});
+						getLanguage(queryDescriptionText, function(res) {
+							judeLineFeed(res, function(res) {
+								for(var i = 0; i < res.length; i++) {
+									dataList[i].description = res[i];
+								}
+							});
+						});
+					});
+					setData.dataList = dataList;
+					loadEvent(deviceWater);
+					loadEvent(deviceIr);
+					loadEvent(deviceDryNode);
+					loadEvent(deviceTemHum);
+				},
+				function(res) {
+					layer.msg("获取设备失败");
+				});
+		}
+
+		function loadEvent(deviceEUI) {
+			var param = {
+				page: page,
+				pageSize: "20",
+				deviceEUI: deviceEUI
+			};
+			request("POST", "/event/queryList.do", param, false, function(res) {
+				var dataList = res.data;
+				var deviceList = setData.dataList;
+				for(var i = 0; i < dataList.length; i++) {
+					var data = dataList[i].data.split("#");
+					dataList[i].createTime = resetSpecialTime(dataList[i].createTime, 0);
+					for(var j = 0; j < deviceList.length; j++) {
+						if(dataList[i].deviceEUI == deviceList[j].deviceEUI) {
+							dataList[i].deviceInfo = deviceList[j];
+						}
+					}
+					if(deviceEUI == deviceWater || deviceEUI == deviceIr || deviceEUI == deviceDryNode) {
+						dataList[i].state = data[0];
+					} else {
+						dataList[i].temperature = data[0];
+						dataList[i].humidity = data[1];
+					}
+				}
+				if(deviceEUI == deviceWater) {
+					setData.deviceWaterList = dataList;
+				} else if(deviceEUI == deviceIr) {
+					setData.deviceIrList = dataList;
+				} else if(deviceEUI == deviceDryNode) {
+					setData.deviceDryNodeList = dataList;
+				} else if(deviceEUI == deviceTemHum) {
+					setData.deviceTemHumList = dataList;
+				}
+			}, function(res) {
+				layer.msg("获取设备事件失败");
+			});
+		}
+		loadIotDevice();
+		getEquipmentState();
+		resetChartSize();
+		nextTick(function() {
+			setNeedDoTimer();
+			setWaterTimer();
+			setIrTimer();
+			setDryNodeTimer();
+		})
+		var dataLoop = setInterval(function() {
+			loadEvent(deviceWater);
+			loadEvent(deviceIr);
+			loadEvent(deviceDryNode);
+			loadEvent(deviceTemHum);
+		}, 20000);
 	</script>
 
 </html>

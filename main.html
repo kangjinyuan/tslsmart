@@ -10,20 +10,20 @@
 		<meta http-equiv="Pragma" content="no-cache">
 		<meta http-equiv="Cache-Control" content="no-cache">
 		<meta http-equiv="Expires" content="0">
+		<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9">
 		<link rel="shortcut icon" href="img/common/logo.png" type="image/x-icon" />
 		<link rel="stylesheet" href="css/reset.css" />
-		<link rel="stylesheet" href="css/common.css?v=b4f7195f99" />
-		<link rel="stylesheet" href="layui/css/layui.css" />
-		<link rel="stylesheet" href="layui/css/modules/layer/default/layer.css" />
-		<link rel="stylesheet" href="css/main.css?v=bbd6cba476" />
-		<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+		<link rel="stylesheet" href="css/common.css?v=41b9775c38" />
+		<link rel="stylesheet" href="css/main.css?v=b8cda6f358" />
+		<script src="js/jquery-1.9.1.min.js"></script>
+		<script src="js/translater.min.js"></script>
+		<script src="js/encryption/jquery.md5.js"></script>
+		<script src="js/echarts-all-3.js"></script>
+		<script src="layui/layui.all.js"></script>
 		<script src="js/vue.min.js"></script>
-		<script src="layui/layui.js"></script>
-		<script src="layui/lay/modules/layer.js"></script>
-		<script src="js/postUrl.js?v=62b1256164"></script>
-		<script src="js/common.js?v=929df8b434"></script>
-		<script type="text/javascript" src="js/rightNav.js?v=a741638c60"></script>
-		<script src="js/init.js?v=b3126b64e1"></script>
+		<script src="js/postUrl.js?v=950197219e"></script>
+		<script src="js/common.js?v=6eb2dfb821"></script>
+		<script src="js/init.js?v=9f5e6c2b6b"></script>
 
 	</head>
 
@@ -32,19 +32,44 @@
 			<div class="header-box">
 				<div class="header-inner-box">
 					<div class="header-text-box">
-						{{currentTime}}
+						<div class="logo-img"></div>
 						<div class="header-decorate-box header-decorate-left-box"></div>
 					</div>
-					<div class="title-box"><span>综合管理平</span>台</div>
+					<div class="title-box">
+						<div class="title-inner-box normal-letter" v-if="language == 'en'">
+							Management Platform
+						</div>
+						<div class="title-inner-box" v-else>
+							综合管理平台
+							<!--{cht}綜合管理平臺-->
+						</div>
+					</div>
 					<div class="header-text-box account-info-box">
 						<div class="header-text quit"></div>
-						<div class="header-text account-name">您好，{{accountName}}</div>
+						<div class="header-text" v-if="language == 'en'">
+							<span onclick="switchLanguage('zh');">简</span> | <span onclick="switchLanguage('cht');">繁</span>
+						</div>
+						<div class="header-text" v-else-if="language == 'zh'">
+							<span onclick="switchLanguage('cht');">繁</span> | <span onclick="switchLanguage('en');">EN</span>
+						</div>
+						<div class="header-text" v-else>
+							<span onclick="switchLanguage('zh');">简</span> | <span onclick="switchLanguage('en');">EN</span>
+						</div>
+						<div class="header-text">
+							<div class="user-info-text position-right">
+								<span>
+								您好，
+								<!--{cht}您好，-->
+								<!--{en}Hi,-->
+							</span> {{accountName}}
+							</div>
+						</div>
 						<div class="header-decorate-box header-decorate-right-box"></div>
 					</div>
 				</div>
 			</div>
 			<div class="main-box">
-				<iframe v-bind:src="'index.html?timestamp='+timestamp" frameborder='0' marginheight='0' marginwidth='0' scrolling='yes'></iframe>
+				<iframe v-bind:src="defaultUrl" frameborder='0' marginheight='0' marginwidth='0' scrolling='yes'></iframe>
 			</div>
 		</div>
 	</body>

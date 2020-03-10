@@ -1,4 +1,4 @@
-﻿<!doctype html>
+﻿<!DOCTYPE html>
 <html>
 
 	<head>
@@ -10,119 +10,67 @@
 		<meta http-equiv="Pragma" content="no-cache">
 		<meta http-equiv="Cache-Control" content="no-cache">
 		<meta http-equiv="Expires" content="0">
+		<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9">
 		<link rel="shortcut icon" href="img/common/logo.png" type="image/x-icon" />
 		<link rel="stylesheet" href="css/reset.css" />
-		<link rel="stylesheet" href="css/common.css?v=83ce685307" />
+		<link rel="stylesheet" href="css/common.css?v=41b9775c38" />
+		<link rel="stylesheet" href="css/main.css?v=b8cda6f358" />
 		<script src="js/jquery-1.9.1.min.js"></script>
+		<script src="js/translater.min.js"></script>
+		<script src="js/encryption/jquery.md5.js"></script>
+		<script src="js/echarts-all-3.js"></script>
 		<script src="layui/layui.all.js"></script>
-		<script src="js/postUrl.js?v=62b1256164"></script>
-		<script src="js/common.js?v=fab245d574"></script>
-		<style>
-			body {
-				width: 100%;
-				height: 100%;
-				background-color: #333;
-				position: absolute;
-				top: 0;
-				left: 0;
-			}
-			
-			h2 {
-				width: 100%;
-				margin-bottom: 18px;
-				font: 40px/40px 微软雅黑;
-				text-align: center;
-				color: #07a6ff;
-				background: -webkit-linear-gradient(left, #009ff1, #00e8cf);
-				background: -moz-linear-gradient(left, #009ff1, #00e8cf);
-				background: -o-linear-gradient(left, #009ff1, #00e8cf);
-				-webkit-background-clip: text;
-				-moz-background-clip: text;
-				-o-background-clip: text;
-				text-fill-color: transparent;
-				-webkit-text-fill-color: transparent;
-			}
-		</style>
+		<script src="js/vue.min.js"></script>
+		<script src="js/postUrl.js?v=950197219e"></script>
+		<script src="js/common.js?v=6eb2dfb821"></script>
+
 	</head>
 
 	<body>
-		<div class="kjy-box VDOM">
-			<button onclick="loadRootRegion();">根节点</button>
-			<button onclick="loadRegion();">区域列表</button>
-			<button onclick="loadFloorJson();">floorJson</button>
-			<h2 class="text-gradient">思诺云AGS管理系统-单位版</h2>
+		<div class="kjy VDOM" v-cloak>
+			<div class="header-box">
+				<div class="header-inner-box">
+					<div class="header-text-box">
+						<div class="logo-img"></div>
+						<div class="header-decorate-box header-decorate-left-box"></div>
+					</div>
+					<div class="title-box">
+						<div class="title-inner-box normal-letter" v-if="language == 'en'">
+							Management Platform
+						</div>
+						<div class="title-inner-box" v-else>
+							综合管理平台
+							<!--{cht}綜合管理平臺-->
+						</div>
+					</div>
+					<div class="header-text-box account-info-box">
+						<div class="header-text quit"></div>
+						<div class="header-text" v-if="language == 'en'">
+							<span onclick="switchLanguage('zh');">简</span> | <span onclick="switchLanguage('cht');">繁</span>
+						</div>
+						<div class="header-text" v-else-if="language == 'zh'">
+							<span onclick="switchLanguage('cht');">繁</span> | <span onclick="switchLanguage('en');">EN</span>
+						</div>
+						<div class="header-text" v-else>
+							<span onclick="switchLanguage('zh');">简</span> | <span onclick="switchLanguage('en');">EN</span>
+						</div>
+						<div class="header-text">
+							<div class="user-info-text position-right">
+								<span>
+								您好，
+								<!--{cht}您好，-->
+								<!--{en}Hi,-->
+							</span> {{accountName}}
+							</div>
+						</div>
+						<div class="header-decorate-box header-decorate-right-box"></div>
+					</div>
+				</div>
+			</div>
+			<div class="main-box">
+				<iframe v-bind:src="defaultUrl" frameborder='0' marginheight='0' marginwidth='0' scrolling='yes'></iframe>
+			</div>
 		</div>
 	</body>
-	<script>
-		function loadRootRegion() {
-			var param = {
-				path: "/api/resource/v1/regions/root",
-				param: {}
-			}
-			hikRequest(param, true, function(res) {
-				console.log(res)
-			})
-		}
-
-		function loadRegion() {
-			var param = {
-				path: "/api/irds/v2/region/nodesByParams",
-				param: {
-					"resourceType": "region",
-					"parentIndexCodes": [
-						"root000000"
-					],
-					"isSubRegion": true,
-					"pageNo": 1,
-					"pageSize": 1,
-					"authCodes": [
-						"view"
-					],
-					"regionType": 10,
-					"regionName": "区",
-					"cascadeFlag": 0
-				}
-			}
-			hikRequest(param, true, function(res) {
-				console.log(res)
-			})
-		}
-
-		function loadCamera() {
-			var param = {
-				path: "/api/resource/v1/regions/regionIndexCode/cameras",
-				param: {
-					"regionIndexCode": "083b2031c1db4f368f015fe2562e0012",
-					"pageNo": 1,
-					"pageSize": 2
-				}
-			}
-			hikRequest(param, true, function(res) {
-				console.log(res)
-			})
-		}
-
-		function loadPreviewUrl() {
-			var param = {
-				path: "/api/video/v1/cameras/previewURLs",
-				param: {
-					"cameraIndexCode": "748d84750e3a4a5bbad3cd4af9ed5101",
-					"streamType": 0,
-					"protocol": "rtsp",
-					"transmode": 1
-				}
-			}
-			hikRequest(param, true, function(res) {
-				console.log(res)
-			})
-		}
-
-		function loadFloorJson() {
-			var timestamp = new Date().getTime();
-			$.getJSON('json/floor.json?timestamp=' + timestamp, function(res) {
-				console.log(res)
-			});
-		}
-	</script>
 
 </html>
